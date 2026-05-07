@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Sistema de diseno - paleta organica inspirada en jardines uruguayos. */
+
+@theme {
+  --color-leaf-50:  #f1f6ee;
+  --color-leaf-100: #dde9d6;
+  --color-leaf-200: #bcd2ad;
+  --color-leaf-300: #95b67f;
+  --color-leaf-400: #759a5e;
+  --color-leaf-500: #5a7e46;
+  --color-leaf-600: #466436;
+  --color-leaf-700: #38502d;
+  --color-leaf-800: #2d4023;
+  --color-leaf-900: #20301a;
+  --color-leaf-950: #122010;
+
+  --color-forest-50:  #eaf3eb;
+  --color-forest-100: #cbe0cd;
+  --color-forest-200: #97c19b;
+  --color-forest-300: #65a06a;
+  --color-forest-400: #4a8050;
+  --color-forest-500: #3a5a40;
+  --color-forest-600: #2f4934;
+  --color-forest-700: #243a28;
+  --color-forest-800: #1c2c1f;
+  --color-forest-900: #131e15;
+
+  --color-terra-50:  #fbf2eb;
+  --color-terra-100: #f4dcc8;
+  --color-terra-200: #e6b692;
+  --color-terra-300: #d28f5e;
+  --color-terra-400: #b86e3c;
+  --color-terra-500: #985330;
+  --color-terra-600: #7a4226;
+  --color-terra-700: #5e331e;
+
+  --color-sun-300: #e9c66b;
+  --color-sun-400: #d8a73f;
+  --color-sun-500: #b88a28;
+
+  --color-cream:    #f7f3ea;
+  --color-cream-2:  #efe8d8;
+  --color-bone:     #fcfaf3;
+  --color-ink:      #1a201a;
+  --color-ink-soft: #4a5249;
+  --color-ink-mute: #7c8479;
+
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  --shadow-soft: 0 1px 2px rgb(20 30 18 / 0.04), 0 8px 24px rgb(20 30 18 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(20 30 18 / 0.05), 0 18px 40px rgb(20 30 18 / 0.10);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+}
+
+/* Reset/base — dentro de @layer base para que las utilities de Tailwind
+   (text-cream, text-leaf-200, etc.) puedan pisar el color por defecto. */
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-leaf-200);
+    color: var(--color-forest-700);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--color-ink);
+  }
+}
+
+.container-px { padding-left: 1.25rem; padding-right: 1.25rem; }
+@media (min-width: 768px) { .container-px { padding-left: 2rem; padding-right: 2rem; } }
+@media (min-width: 1280px) { .container-px { padding-left: 3rem; padding-right: 3rem; } }
+
+.bg-grain {
+  background-image: radial-gradient(circle at 1px 1px, rgba(20, 30, 18, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
