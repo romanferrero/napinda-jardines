@@ -5,7 +5,6 @@ import SectionTitle from '../components/ui/SectionTitle'
 import FadeIn from '../components/ui/FadeIn'
 
 const portrait =
-<<<<<<< HEAD
   'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80'
 
 /**
@@ -14,16 +13,6 @@ const portrait =
 export default function About() {
   return (
     <section id="nosotros" className="py-24 md:py-32 bg-cream bg-grain">
-=======
-  './public/team/team.jpg'
-
-/**
- * Sección "equipo": dos columnas con imagen y texto, valores y stats.
- */
-export default function About() {
-  return (
-    <section id="equipo" className="py-24 md:py-32 bg-cream bg-grain">
->>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
           <FadeIn className="lg:col-span-5 lg:sticky lg:top-32">
@@ -42,13 +31,8 @@ export default function About() {
 
           <div className="lg:col-span-7">
             <SectionTitle
-<<<<<<< HEAD
               eyebrow="Nosotros"
-              title="Hacemos jardines con oficio, no a las apuradas."
-=======
-              eyebrow="Equipo Ñapinda"
               title="Hacemos jardines con oficio, sensibilidad y tiempo."
->>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
               subtitle={site.longPitch}
             />
 

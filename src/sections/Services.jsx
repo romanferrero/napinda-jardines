@@ -16,14 +16,8 @@ export default function Services() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14">
           <SectionTitle
             eyebrow="Lo que hacemos"
-<<<<<<< HEAD
-            title="Servicios pensados para cada etapa de tu jardín."
-            subtitle="Desde el primer croquis hasta el mantenimiento mes a mes. Podés contratar todo el ciclo o solo lo que necesites."
-=======
             title="Servicios para crear y cuidar espacios verdes."
-            subtitle="Desarrollamos proyectos de paisajismo en jardines particulares, terrazas, interiores, estancias, chacras, urbanizaciones y espacios públicos. 
-                      Acompañamos cada etapa del proceso, desde el diseño inicial hasta la ejecución y el cuidado posterior."
->>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
+            subtitle="Desarrollamos proyectos de paisajismo en jardines particulares, terrazas, interiores, estancias, chacras, urbanizaciones y espacios públicos. Acompañamos cada etapa del proceso, desde el diseño inicial hasta la ejecución y el cuidado posterior."
           />
           <Button href="#contacto" variant="outline" size="md">
             Hablemos del tuyo

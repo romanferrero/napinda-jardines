@@ -54,11 +54,7 @@ export const services = [
   },
   {
     id: 'cesped',
-<<<<<<< HEAD
     icon: 'flower',
-=======
-    icon: 'grass',
->>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
     title: 'Arreglos florales',
     summary:
       'Creamos composiciones florales para acompañar espacios, eventos y momentos especiales.',
