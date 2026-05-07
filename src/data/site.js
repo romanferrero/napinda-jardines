@@ -34,8 +34,13 @@ export const site = {
 
   nav: [
     { label: 'Inicio', href: '/' },
+<<<<<<< HEAD
     { label: 'Nosotros', href: '/#nosotros' },
     { label: 'Equipo', href: '/#equipo' },
+=======
+    { label: 'Equipo', href: '/#equipo' },
+    { label: 'Nosotras', href: '/#nosotras' },
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
     { label: 'Servicios', href: '/#servicios' },
     { label: 'Galería', href: '/#galeria' },
     { label: 'Contacto', href: '/#contacto' },

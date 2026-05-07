@@ -23,7 +23,12 @@ export default function Contact() {
   } = useContactForm()
 
   const fieldClass = (field) =>
+<<<<<<< HEAD
     `w-full px-4 py-3 bg-cream/5 border rounded-xl text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-leaf-300 focus:border-leaf-300 transition-colors ${touched[field] && errors[field] ? 'border-terra-300' : 'border-cream/15'}`
+=======
+    `w-full px-4 py-3 bg-cream/5 border rounded-xl text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-leaf-300 focus:border-leaf-300 transition-colors ${touched[field] && errors[field] ? 'border-terra-300' : 'border-cream/15'
+    }`
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
 
   return (
     <section id="contacto" className="py-24 md:py-32 bg-forest-700 text-cream">
@@ -41,10 +46,15 @@ export default function Contact() {
               <ContactItem
                 icon="whatsapp"
                 title="WhatsApp"
+<<<<<<< HEAD
                 links={[
                   { label: site.contact.phone, href: site.contact.whatsappHref },
                   { label: site.contact.phoneTwo, href: site.contact.whatsappTwoHref },
                 ]}
+=======
+                value={`${site.contact.phone}   ·   ${site.contact.phoneTwo}`}
+                href={`${site.contact.whatsappHref}   ·   ${site.contact.whatsappHrefTwo}`}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
                 external
               />
               <ContactItem
@@ -178,6 +188,7 @@ export default function Contact() {
   )
 }
 
+<<<<<<< HEAD
 function ContactItem({ icon, title, value, href, external, links }) {
   const ext = external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
 
@@ -216,6 +227,33 @@ function ContactItem({ icon, title, value, href, external, links }) {
       </div>
     </div>
   )
+=======
+function ContactItem({ icon, title, value, href, external }) {
+  const inner = (
+    <>
+      <div className="w-11 h-11 rounded-full bg-cream/10 text-leaf-200 flex items-center justify-center flex-shrink-0">
+        <Icon name={icon} className="w-5 h-5" />
+      </div>
+      <div>
+        <p className="text-xs uppercase tracking-[0.18em] text-cream/50 mb-1">{title}</p>
+        <p className="text-cream">{value}</p>
+      </div>
+    </>
+  )
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        className="flex items-start gap-4 hover:opacity-90 transition-opacity"
+      >
+        {inner}
+      </a>
+    )
+  }
+  return <div className="flex items-start gap-4">{inner}</div>
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
 }
 
 function Field({ as: As = 'input', label, name, error, className, ...rest }) {

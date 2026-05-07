@@ -5,6 +5,7 @@ import FadeIn from '../components/ui/FadeIn'
 
 /**
  * Sección "Quienes lideran" — fotos y bio breve de las dueñas.
+<<<<<<< HEAD
  */
 export default function Team() {
   return (
@@ -14,6 +15,18 @@ export default function Team() {
           eyebrow="Quienes lideran"
           title="La empresa la sostienen sus dueñas, en el terreno."
           subtitle="No subcontratamos la dirección de cada proyecto: ellas están detrás de cada decisión, desde la primera visita hasta la entrega final."
+=======
+ * Pensada para vivir entre Nosotros y Servicios; se puede mover sola.
+ */
+export default function Team() {
+  return (
+    <section id="nosotras" className="py-24 md:py-28 bg-bone">
+      <Container>
+        <SectionTitle
+          eyebrow="Nosotras"
+          title="Diseñamos desde la cercanía."
+          subtitle="Nos involucramos personalmente en cada etapa del proyecto. Escuchamos, observamos y acompañamos el proceso para que cada jardín refleje su entorno y a quienes lo habitan."
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
           align="center"
           className="mx-auto"
         />

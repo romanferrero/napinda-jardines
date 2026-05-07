@@ -37,7 +37,11 @@ export default function Hero() {
           transition={{ duration: 0.7, ease, delay: 0.3 }}
           className="text-leaf-200 text-xs md:text-sm font-medium tracking-[0.2em] uppercase mb-6"
         >
+<<<<<<< HEAD
           Paisajismo · Uruguay desde 2009
+=======
+          Paisajismo · Uruguay
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
         </motion.p>
 
         <motion.h1
@@ -59,7 +63,11 @@ export default function Hero() {
           className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-cream/85"
         >
           Diseñamos, construimos y mantenemos espacios verdes en todo el país.
+<<<<<<< HEAD
           Cada proyecto se piensa para crecer con el tiempo y con quien lo habita.
+=======
+          Cada proyecto nace de una mirada sensible del lugar, pensado para crecer con el tiempo y acompañar a quienes lo habitan.
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
         </motion.p>
 
         <motion.div
@@ -76,7 +84,11 @@ export default function Hero() {
             rel="noopener noreferrer"
           >
             <Icon name="whatsapp" className="w-5 h-5" />
+<<<<<<< HEAD
             Pedí presupuesto
+=======
+            Contáctanos
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
           </Button>
           <Button href="#servicios" variant="secondary" size="lg">
             Ver servicios

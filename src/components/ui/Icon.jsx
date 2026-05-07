@@ -1,9 +1,12 @@
 /**
  * Set de íconos SVG inline. Toman currentColor para integrarse fácil.
  * Uso: <Icon name="leaf" className="w-6 h-6 text-forest-500" />
+<<<<<<< HEAD
  *
  * Importante: el icono "whatsapp" usa fill (no stroke) — internamente
  * el componente desactiva stroke cuando detecta que el path es solid.
+=======
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
  */
 const paths = {
   leaf: (
@@ -38,6 +41,7 @@ const paths = {
       <path d="M15 21c0-7 3-12 6-12" />
     </>
   ),
+<<<<<<< HEAD
   flower: (
     <>
       <circle cx="12" cy="12" r="2.5" />
@@ -49,6 +53,8 @@ const paths = {
       <path d="M9 21h6" />
     </>
   ),
+=======
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
   compass: (
     <>
       <circle cx="12" cy="12" r="9" />
@@ -79,6 +85,7 @@ const paths = {
   facebook: (
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z" />
   ),
+<<<<<<< HEAD
   // WhatsApp: SVG oficial-style (filled). Ver Icon's render para fill mode.
   whatsapp: (
     <path
@@ -86,6 +93,10 @@ const paths = {
       clipRule="evenodd"
       d="M19.077 4.928A9.969 9.969 0 0 0 12.011 2c-5.506 0-9.987 4.479-9.987 9.985 0 1.76.46 3.479 1.331 4.992L2 22l5.169-1.323a9.96 9.96 0 0 0 4.842 1.234h.004c5.504 0 9.985-4.48 9.985-9.985a9.969 9.969 0 0 0-2.923-7.073zm-7.066 15.36h-.003a8.32 8.32 0 0 1-4.222-1.151l-.302-.18-3.124.8.832-3.04-.196-.314a8.236 8.236 0 0 1-1.273-4.408c.002-4.575 3.726-8.298 8.296-8.298a8.246 8.246 0 0 1 5.866 2.43 8.243 8.243 0 0 1 2.428 5.873c-.002 4.574-3.726 8.288-8.302 8.288zm4.554-6.207c-.249-.124-1.475-.728-1.703-.811-.228-.083-.394-.124-.56.125-.165.249-.643.811-.788.977-.145.166-.29.187-.539.063-.249-.125-1.054-.388-2.008-1.24-.742-.661-1.243-1.479-1.388-1.728-.146-.249-.016-.384.109-.508.112-.111.249-.29.374-.435.124-.146.166-.249.249-.415.083-.166.041-.311-.021-.435-.062-.124-.56-1.348-.768-1.847-.202-.486-.408-.42-.56-.428a9.97 9.97 0 0 0-.477-.009.917.917 0 0 0-.665.311c-.228.249-.871.85-.871 2.073 0 1.224.892 2.405 1.017 2.572.124.166 1.755 2.681 4.252 3.762.594.257 1.058.41 1.42.524.596.19 1.139.163 1.568.099.479-.072 1.475-.604 1.683-1.187.207-.583.207-1.083.145-1.187-.062-.103-.228-.166-.477-.29z"
     />
+=======
+  whatsapp: (
+    <path d="M20.5 3.5A11 11 0 0 0 3.6 17.1L2 22l5-1.6A11 11 0 1 0 20.5 3.5ZM12 20a8 8 0 0 1-4-1l-3 1 1-3a8 8 0 1 1 6 3Zm4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.8 1c-.1.1-.3.1-.5 0a6 6 0 0 1-3-2.6c0-.2 0-.3.1-.4l.4-.5c.1-.1.1-.2.2-.3 0-.1 0-.2-.1-.3L9.6 8c-.1-.3-.3-.3-.4-.3H8.6a1 1 0 0 0-.7.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.6.1.1 1.7 2.7 4.2 3.7 2 .8 2.4.6 2.9.6.4 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.2Z" />
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
   ),
   mapPin: (
     <>
@@ -106,22 +117,34 @@ const paths = {
   arrowDown: <path d="M12 5v14M6 13l6 6 6-6" />,
 }
 
+<<<<<<< HEAD
 // Iconos que se renderizan en modo "fill" (sólido) en vez de "stroke" (lineal).
 const FILLED = new Set(['whatsapp', 'facebook'])
 
+=======
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
 export default function Icon({ name, className = 'w-6 h-6', strokeWidth = 1.6, ...rest }) {
   const path = paths[name]
   if (!path) return null
 
+<<<<<<< HEAD
   const isFilled = FILLED.has(name)
 
+=======
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
+<<<<<<< HEAD
       fill={isFilled ? 'currentColor' : 'none'}
       stroke={isFilled ? 'none' : 'currentColor'}
       strokeWidth={isFilled ? 0 : strokeWidth}
+=======
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={strokeWidth}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}

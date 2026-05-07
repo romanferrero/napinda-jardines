@@ -12,8 +12,13 @@ import Icon from '../components/ui/Icon'
  * Navegación con flechas dentro del álbum (← →) y Esc para cerrar.
  */
 export default function Gallery() {
+<<<<<<< HEAD
   const [activeProject, setActiveProject] = useState(null)
   const [activePhoto, setActivePhoto] = useState(0)
+=======
+  const [activeProject, setActiveProject] = useState(null) // index proyecto
+  const [activePhoto, setActivePhoto] = useState(0) // index foto dentro del álbum
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
 
   const project = activeProject !== null ? gallery[activeProject] : null
   const photos = project?.photos ?? []
@@ -79,8 +84,14 @@ export default function Gallery() {
                   <p className="text-xs uppercase tracking-[0.18em] text-leaf-200 mb-1">
                     {item.category}
                   </p>
+<<<<<<< HEAD
                   <p className="font-display text-xl text-cream">{item.title}</p>
                 </div>
+=======
+                  <p className="font-display text-xl">{item.title}</p>
+                </div>
+                {/* Badge cantidad de fotos */}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
                 <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-forest-900/65 backdrop-blur-sm text-cream text-xs font-medium opacity-90">
                   {item.photos.length} fotos
                 </div>
@@ -100,6 +111,10 @@ export default function Gallery() {
             className="fixed inset-0 z-[100] bg-forest-900/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
             onClick={close}
           >
+<<<<<<< HEAD
+=======
+            {/* Cerrar */}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
             <button
               type="button"
               aria-label="Cerrar"
@@ -109,6 +124,10 @@ export default function Gallery() {
               <Icon name="close" className="w-6 h-6" />
             </button>
 
+<<<<<<< HEAD
+=======
+            {/* Prev */}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
             {photos.length > 1 && (
               <button
                 type="button"
@@ -120,6 +139,10 @@ export default function Gallery() {
               </button>
             )}
 
+<<<<<<< HEAD
+=======
+            {/* Next */}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
             {photos.length > 1 && (
               <button
                 type="button"
@@ -140,6 +163,10 @@ export default function Gallery() {
               className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center"
               onClick={(e) => e.stopPropagation()}
             >
+<<<<<<< HEAD
+=======
+              {/* Imagen activa */}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
               <div className="lg:col-span-8 relative">
                 <AnimatePresence mode="wait">
                   <motion.img
@@ -154,6 +181,10 @@ export default function Gallery() {
                   />
                 </AnimatePresence>
 
+<<<<<<< HEAD
+=======
+                {/* Contador */}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
                 {photos.length > 1 && (
                   <div className="mt-3 flex items-center justify-center gap-2">
                     {photos.map((_, i) => (
@@ -162,13 +193,23 @@ export default function Gallery() {
                         type="button"
                         onClick={() => setActivePhoto(i)}
                         aria-label={`Ver foto ${i + 1}`}
+<<<<<<< HEAD
                         className={`h-1.5 rounded-full transition-all ${i === activePhoto ? 'w-6 bg-leaf-300' : 'w-1.5 bg-cream/30 hover:bg-cream/60'}`}
+=======
+                        className={`h-1.5 rounded-full transition-all ${
+                          i === activePhoto ? 'w-6 bg-leaf-300' : 'w-1.5 bg-cream/30 hover:bg-cream/60'
+                        }`}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
                       />
                     ))}
                   </div>
                 )}
               </div>
 
+<<<<<<< HEAD
+=======
+              {/* Info del proyecto */}
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
               <div className="lg:col-span-4 text-cream">
                 <p className="text-leaf-300 text-xs uppercase tracking-[0.2em] mb-3">
                   {project.category}

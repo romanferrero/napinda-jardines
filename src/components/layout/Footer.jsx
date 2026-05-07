@@ -51,12 +51,17 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <Icon name="phone" className="w-4 h-4 mt-1 flex-shrink-0 text-leaf-300" />
+<<<<<<< HEAD
                 <div className="flex flex-col">
                   <a href={site.contact.phoneHref} className="hover:text-leaf-200 transition-colors">{site.contact.phone}</a>
                   {site.contact.phoneTwo && (
                     <a href={site.contact.phoneTwoHref} className="hover:text-leaf-200 transition-colors">{site.contact.phoneTwo}</a>
                   )}
                 </div>
+=======
+                <a href={`${site.contact.phoneHref}   ·   ${site.contact.phoneHrefTwo}`}
+                  className="hover:text-leaf-200 transition-colors">{`${site.contact.phone}   ·   ${site.contact.phoneTwo}`}</a>
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
               </li>
               <li className="flex items-start gap-3">
                 <Icon name="mail" className="w-4 h-4 mt-1 flex-shrink-0 text-leaf-300" />
@@ -66,7 +71,10 @@ export default function Footer() {
                 <Icon name="mapPin" className="w-4 h-4 mt-1 flex-shrink-0 text-leaf-300" />
                 <span>
                   {site.contact.address}<br />
+<<<<<<< HEAD
                   <span className="text-cream/50">{site.contact.hours}</span>
+=======
+>>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
                 </span>
               </li>
             </ul>
