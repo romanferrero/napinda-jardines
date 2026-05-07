@@ -1,5 +1,4 @@
 /**
-<<<<<<< HEAD
  * Logo "Ñapinda".
  *
  * Si subís un archivo a /public/logo.png (o /logo-light.png para fondo
@@ -38,11 +37,6 @@ export default function Logo({ className = '', light = false }) {
   }
 
   // Fallback tipográfico (también se muestra mientras 'unknown')
-=======
- * Logo "Ñapinda" — combinación de marca tipográfica + ícono de hoja.
- */
-export default function Logo({ className = '', light = false }) {
->>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
   const text = light ? 'text-cream' : 'text-forest-700'
   const accent = light ? 'text-leaf-300' : 'text-leaf-500'
 

@@ -1,11 +1,6 @@
 @import "tailwindcss";
 
-<<<<<<< HEAD
 /* Sistema de diseno - paleta organica inspirada en jardines uruguayos. */
-=======
-/* Sistema de diseno - paleta organica inspirada en jardines uruguayos.
-   Tokens CSS para iterar facil sin tocar JSX. */
->>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
 
 @theme {
   --color-leaf-50:  #f1f6ee;
@@ -63,7 +58,6 @@
   --radius-xl: 28px;
 }
 
-<<<<<<< HEAD
 /* Reset/base — dentro de @layer base para que las utilities de Tailwind
    (text-cream, text-leaf-200, etc.) puedan pisar el color por defecto. */
 @layer base {
@@ -91,31 +85,6 @@
     line-height: 1.05;
     color: var(--color-ink);
   }
-=======
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--color-cream);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-::selection {
-  background: var(--color-leaf-200);
-  color: var(--color-forest-700);
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  color: var(--color-ink);
->>>>>>> fbcb7265dd781026627095a3b8bb2690793cc395
 }
 
 .container-px { padding-left: 1.25rem; padding-right: 1.25rem; }

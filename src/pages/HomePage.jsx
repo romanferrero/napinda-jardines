@@ -3,6 +3,7 @@ import About from '../sections/About'
 import Team from '../sections/Team'
 import Services from '../sections/Services'
 import Gallery from '../sections/Gallery'
+import Clients from '../sections/Clients'
 import Contact from '../sections/Contact'
 import WhatsAppFAB from '../sections/WhatsAppFAB'
 
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Team />
       <Services />
       <Gallery />
+      <Clients />
       <Contact />
       <WhatsAppFAB />
     </>

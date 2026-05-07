@@ -66,7 +66,6 @@ export default function Footer() {
                 <Icon name="mapPin" className="w-4 h-4 mt-1 flex-shrink-0 text-leaf-300" />
                 <span>
                   {site.contact.address}<br />
-                  <span className="text-cream/50">{site.contact.hours}</span>
                 </span>
               </li>
             </ul>

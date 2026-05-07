@@ -38,6 +38,7 @@ export const site = {
     { label: 'Equipo', href: '/#equipo' },
     { label: 'Servicios', href: '/#servicios' },
     { label: 'Galería', href: '/#galeria' },
+    { label: 'Clientes', href: '/#clientes' },
     { label: 'Contacto', href: '/#contacto' },
   ],
 }

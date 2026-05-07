@@ -5,7 +5,7 @@ import SectionTitle from '../components/ui/SectionTitle'
 import FadeIn from '../components/ui/FadeIn'
 
 const portrait =
-  'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80'
+  '/public/team/team.jpg'
 
 /**
  * Sección "Nosotros": dos columnas con imagen y texto, valores y stats.
