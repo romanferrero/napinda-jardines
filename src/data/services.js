@@ -7,35 +7,37 @@ export const services = [
     icon: 'leaf',
     title: 'Diseño paisajístico',
     summary:
-      'Proyectamos jardines a medida, pensando en cómo se van a vivir y cómo van a crecer.',
+      'Proyectamos espacios verdes a medida, integrando estética, funcionalidad y naturaleza.',
     points: [
       'Relevamiento y análisis del terreno',
       'Renders y planos detallados',
-      'Selección de especies adaptadas al clima',
+      'Selección de especies',
+      'Propuesta de diseño y distribución'
     ],
   },
   {
     id: 'construccion',
     icon: 'shovel',
-    title: 'Construcción de jardines',
+    title: 'Dirección y ejecución',
     summary:
-      'Llevamos el proyecto al terreno con un equipo propio y materiales de primera.',
+      'Llevamos el proyecto al terreno, cuidando cada etapa de la obra y cada decisión del diseño.',
     points: [
-      'Preparación de suelos y nivelación',
-      'Plantación, canteros y senderos',
-      'Iluminación exterior y deck',
+      'Dirección de obra',
+      'Preparación del terreno',
+      'Plantación y armado de canteros',
+      'Coordinación de materiales y detalles'
     ],
   },
   {
     id: 'mantenimiento',
     icon: 'sprout',
-    title: 'Mantenimiento integral',
+    title: 'Mantenimiento de áreas verdes',
     summary:
-      'Visitas periódicas para que tu jardín crezca prolijo, sano y siempre listo.',
+      'Cuidamos jardines y espacios verdes para que se mantengan sanos, prolijos y equilibrados durante todo el año.',
     points: [
-      'Poda, fertilización y control fitosanitario',
+      'Poda y control de crecimiento',
       'Corte de césped y bordes',
-      'Limpieza estacional y reposiciones',
+      'Control sanitario y fertilización',
     ],
   },
   {
@@ -53,13 +55,14 @@ export const services = [
   {
     id: 'cesped',
     icon: 'grass',
-    title: 'Césped y panes',
+    title: 'Arreglos florales',
     summary:
-      'Implantación de césped en panes o siembra, con preparación adecuada del suelo.',
+      'Creamos composiciones florales para acompañar espacios, eventos y momentos especiales.',
     points: [
-      'Variedades para sol o sombra',
-      'Aireación y fertilización',
-      'Reposición de zonas dañadas',
+      'Arreglos personalizados',
+      'Selección de flores y follajes',
+      'Composiciones naturales',
+      'Ambientación de espacios'
     ],
   },
   {

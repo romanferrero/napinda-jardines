@@ -6,25 +6,25 @@ export const values = [
     id: 'oficio',
     title: 'Oficio',
     description:
-      'Un equipo de jardineros, paisajistas y agrónomos que trabaja la tierra con sus propias manos, no solo desde el escritorio.',
+      'Somos un equipo de jardineras, paisajistas y técnicos que trabaja la tierra con experiencia, criterio y dedicación.',
   },
   {
     id: 'cuidado',
     title: 'Cuidado',
     description:
-      'Cada planta está donde tiene que estar. Pensamos en el tiempo, no en el efecto inmediato del primer día.',
+      'Pensamos cada jardín para que evolucione con el tiempo, respetando sus ritmos, sus especies y su entorno.',
   },
   {
     id: 'cercania',
     title: 'Cercanía',
     description:
-      'Atendemos a cada cliente como un proyecto único. Acompañamos antes, durante y después de la obra.',
+      'Acompañamos cada proyecto de forma personalizada, desde las primeras ideas hasta el cuidado posterior.',
   },
   {
     id: 'sustentabilidad',
     title: 'Sustentabilidad',
     description:
-      'Especies nativas o adaptadas, riego eficiente y prácticas de bajo impacto siempre que es posible.',
+      'Elegimos especies nativas o adaptadas, riego eficiente y prácticas responsables siempre que el espacio lo permite.',
   },
 ]
 

@@ -49,8 +49,8 @@ export default function Gallery() {
       <Container>
         <SectionTitle
           eyebrow="Galería"
-          title="Algunos de nuestros trabajos."
-          subtitle="Cada jardín es único, pero todos comparten un punto común: el detalle. Tocá una tarjeta para ver el álbum completo."
+          title="Algunos espacios que fuimos trabajando."
+          subtitle="Cada espacio es único. En cada proyecto buscamos que el diseño, las especies y los detalles convivan en armonía. Recorré cada proyecto para conocer más sobre su proceso y resultado."
           align="center"
           className="mx-auto"
         />

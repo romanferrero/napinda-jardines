@@ -23,8 +23,7 @@ export default function Contact() {
   } = useContactForm()
 
   const fieldClass = (field) =>
-    `w-full px-4 py-3 bg-cream/5 border rounded-xl text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-leaf-300 focus:border-leaf-300 transition-colors ${
-      touched[field] && errors[field] ? 'border-terra-300' : 'border-cream/15'
+    `w-full px-4 py-3 bg-cream/5 border rounded-xl text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-leaf-300 focus:border-leaf-300 transition-colors ${touched[field] && errors[field] ? 'border-terra-300' : 'border-cream/15'
     }`
 
   return (
@@ -34,8 +33,8 @@ export default function Contact() {
           <div className="lg:col-span-5">
             <SectionTitle
               eyebrow="Contacto"
-              title="Hablemos de tu próximo jardín."
-              subtitle="Contános dónde queda, qué imaginás y cuándo te gustaría verlo terminado. Te respondemos a la brevedad."
+              title="Empecemos a imaginar tu jardín."
+              subtitle="Ya sea un jardín, una terraza, un interior o un espacio a renovar, contanos qué necesitás. Te responderemos para acompañarte desde las primeras ideas."
               light
             />
 
@@ -43,8 +42,8 @@ export default function Contact() {
               <ContactItem
                 icon="whatsapp"
                 title="WhatsApp"
-                value={site.contact.phone}
-                href={site.contact.whatsappHref}
+                value={`${site.contact.phone}   ·   ${site.contact.phoneTwo}`}
+                href={`${site.contact.whatsappHref}   ·   ${site.contact.whatsappHrefTwo}`}
                 external
               />
               <ContactItem
@@ -56,7 +55,7 @@ export default function Contact() {
               <ContactItem
                 icon="mapPin"
                 title="Ubicación"
-                value={`${site.contact.address} · ${site.contact.hours}`}
+                value={site.contact.address}
               />
             </div>
           </div>

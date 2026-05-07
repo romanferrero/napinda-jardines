@@ -1,25 +1,21 @@
-/**
+/*
  * Dueñas / referentes de la empresa.
- * Reemplazá los placeholders por datos reales y subí las fotos a
- * /public/team/ cuando estén listas.
  */
 export const team = [
   {
     id: 'fundadora-1',
-    name: 'Nombre Apellido',
-    role: 'Fundadora · Paisajista',
+    name: 'Ma. Victoria Etchegoimberry',
+    role: 'Paisajista',
     bio:
-      'Más de 15 años proyectando jardines residenciales y corporativos. Egresada de la Facultad de Agronomía.',
-    photo:
-      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80',
+      'La estética y la naturaleza han sido, desde siempre, una gran motivación para mí. Con el tiempo descubrí lo inspirador que resulta transformar un espacio vacío o desordenado en un lugar disfrutable, armónico y con identidad. El estudio de las plantas me acercó al diseño y me permitió unir conocimiento, sensibilidad y oficio en cada proyecto. Hoy me motiva seguir aprendiendo y lograr que cada nuevo espacio alcance su mejor versión.',
+    photo: 'public/team/victoria.jpg',
   },
   {
     id: 'fundadora-2',
-    name: 'Nombre Apellido',
-    role: 'Fundadora · Dirección de obra',
+    name: 'Ma. Cristina Cassarino',
+    role: 'Paisajista',
     bio:
-      'Coordina los equipos en el terreno, los proveedores y el seguimiento post-obra de cada proyecto.',
-    photo:
-      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80',
+      'Mi niñez transcurrió en el campo. Ese origen, junto con los paisajes de nuestro país, me transmite una profunda paz y sigue siendo una de mis mayores fuentes de inspiración. Nos conocimos en el colegio y, con el tiempo, transitamos juntas esta hermosa carrera. La vida fue pasando y hoy, más de 20 años después, nos encontramos combinando nuestra vida familiar con una profesión que nos apasiona. Seguimos buscando aprender, crecer y encarar nuevos desafíos. El trabajo en equipo potencia nuestra capacidad de creación y nos permite mirar cada proyecto desde distintas sensibilidades.',
+    photo: 'public/team/cristina.jpg',
   },
 ]

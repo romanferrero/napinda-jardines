@@ -66,7 +66,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
           >
             <Icon name="whatsapp" className="w-4 h-4" />
-            Pedí presupuesto
+            Contáctanos
           </Button>
         </div>
 
