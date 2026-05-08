@@ -5,7 +5,7 @@ import SectionTitle from '../components/ui/SectionTitle'
 import FadeIn from '../components/ui/FadeIn'
 
 const portrait =
-  '/public/team/team.jpg'
+  '/team/team.jpg'
 
 /**
  * Sección "Nosotros": dos columnas con imagen y texto, valores y stats.

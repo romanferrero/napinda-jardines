@@ -7,12 +7,11 @@ import Icon from '../ui/Icon'
 
 /**
  * Navbar fija con cambio de fondo al hacer scroll y menú móvil deslizable.
- * En "transparente" (sobre Hero) los elementos son cream; al scrollear
- * vuelven a oscuros sobre fondo cream.
  *
- * Nota mobile: el fondo es cream/95 con blur para asegurar contraste del
- * botón hamburguesa en cualquier sección. Y el botón tiene un círculo
- * sutil de fondo para destacar incluso sobre fotos o secciones forest.
+ * IMPORTANTE: el overlay del menú móvil se renderiza como sibling del
+ * <header> (no como hijo) para evitar problemas de stacking-context que
+ * hacían que el bg verde no se aplicara correctamente. Background sólido
+ * con color hexa explícito + z-index alto para garantizar opacidad total.
  */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -38,53 +37,56 @@ export default function Navbar() {
     ? 'text-ink-soft hover:text-forest-700'
     : 'text-cream/90 hover:text-cream drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]'
 
-  // Botón hamburger: círculo de fondo sutil para contraste, color invertido por estado
   const hamburgerCls = scrolled
     ? 'bg-forest-500/8 hover:bg-forest-500/12 text-forest-700'
     : 'bg-cream/15 hover:bg-cream/25 text-cream backdrop-blur-sm'
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${headerBg}`}>
-      <div className="mx-auto max-w-7xl container-px h-16 md:h-20 flex items-center justify-between">
-        <a href="/" aria-label="Inicio" className="flex items-center">
-          <Logo light={!scrolled} />
-        </a>
+    <>
+      <header className={`fixed top-0 inset-x-0 z-40 transition-colors duration-300 ${headerBg}`}>
+        <div className="mx-auto max-w-7xl container-px h-16 md:h-20 flex items-center justify-between">
+          <a href="/" aria-label="Inicio" className="flex items-center">
+            <Logo light={!scrolled} />
+          </a>
 
-        <nav className="hidden lg:flex items-center gap-9">
-          {site.nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-medium transition-colors ${linkColor}`}
+          <nav className="hidden lg:flex items-center gap-9">
+            {site.nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors ${linkColor}`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="hidden lg:block">
+            <Button
+              href={site.contact.whatsappHref}
+              variant={scrolled ? 'primary' : 'secondary'}
+              size="sm"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+              <Icon name="whatsapp" className="w-4 h-4" />
+              Pedí presupuesto
+            </Button>
+          </div>
 
-        <div className="hidden lg:block">
-          <Button
-            href={site.contact.whatsappHref}
-            variant={scrolled ? 'primary' : 'secondary'}
-            size="sm"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            className={`lg:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors ${hamburgerCls}`}
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menú"
           >
-            <Icon name="whatsapp" className="w-4 h-4" />
-            Contáctanos
-          </Button>
+            <Icon name="menu" className="w-6 h-6" strokeWidth={2} />
+          </button>
         </div>
+      </header>
 
-        <button
-          type="button"
-          className={`lg:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors ${hamburgerCls}`}
-          onClick={() => setOpen(true)}
-          aria-label="Abrir menú"
-        >
-          <Icon name="menu" className="w-6 h-6" strokeWidth={2} />
-        </button>
-      </div>
-
+      {/* Overlay del menú móvil — fuera del <header> para que el bg sea
+          siempre 100% sólido sin importar el stacking-context del header. */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -93,7 +95,8 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 z-50 bg-forest-800 text-cream"
+            className="lg:hidden fixed inset-0 z-[100] text-cream"
+            style={{ backgroundColor: '#1c2c1f' }}
           >
             <div className="container-px h-16 md:h-20 flex items-center justify-between max-w-7xl mx-auto">
               <Logo light />
@@ -144,6 +147,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }
