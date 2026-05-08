@@ -13,7 +13,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-forest-700 text-cream/80 overflow-hidden">
+    <footer className="site-footer relative bg-forest-700 text-cream/80 overflow-hidden">
       <Container className="relative pt-14 md:pt-20 pb-28 sm:pb-40 md:pb-56">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-5">
