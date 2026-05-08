@@ -8,10 +8,10 @@ import FadeIn from '../components/ui/FadeIn'
  */
 export default function Team() {
   return (
-    <section id="equipo" className="py-24 md:py-28 bg-bone">
+    <section id="nosotras" className="py-24 md:py-28 bg-bone">
       <Container>
         <SectionTitle
-          eyebrow="Quienes lideran"
+          eyebrow="Nosotras"
           title="Diseñamos desde la cercanía."
           subtitle="Nos involucramos personalmente en cada etapa del proyecto. Escuchamos, observamos y acompañamos el proceso para que cada jardín refleje su entorno y a quienes lo habitan."
           align="center"

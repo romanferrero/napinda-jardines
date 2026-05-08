@@ -7,11 +7,7 @@ import Icon from '../ui/Icon'
 
 /**
  * Navbar fija con cambio de fondo al hacer scroll y menú móvil deslizable.
- *
- * IMPORTANTE: el overlay del menú móvil se renderiza como sibling del
- * <header> (no como hijo) para evitar problemas de stacking-context que
- * hacían que el bg verde no se aplicara correctamente. Background sólido
- * con color hexa explícito + z-index alto para garantizar opacidad total.
+ * Logo en tamaño "lg" para darle protagonismo a la marca.
  */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -44,9 +40,9 @@ export default function Navbar() {
   return (
     <>
       <header className={`fixed top-0 inset-x-0 z-40 transition-colors duration-300 ${headerBg}`}>
-        <div className="mx-auto max-w-7xl container-px h-16 md:h-20 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl container-px h-20 md:h-24 flex items-center justify-between">
           <a href="/" aria-label="Inicio" className="flex items-center">
-            <Logo light={!scrolled} />
+            <Logo size="lg" light={!scrolled} />
           </a>
 
           <nav className="hidden lg:flex items-center gap-9">
@@ -70,7 +66,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
             >
               <Icon name="whatsapp" className="w-4 h-4" />
-              Pedí presupuesto
+              Contáctanos
             </Button>
           </div>
 
@@ -85,8 +81,8 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Overlay del menú móvil — fuera del <header> para que el bg sea
-          siempre 100% sólido sin importar el stacking-context del header. */}
+      {/* Overlay del menú móvil — fuera del <header> para evitar issues
+          de stacking-context. Bg sólido garantizado con inline style. */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -98,8 +94,8 @@ export default function Navbar() {
             className="lg:hidden fixed inset-0 z-[100] text-cream"
             style={{ backgroundColor: '#1c2c1f' }}
           >
-            <div className="container-px h-16 md:h-20 flex items-center justify-between max-w-7xl mx-auto">
-              <Logo light />
+            <div className="container-px h-20 md:h-24 flex items-center justify-between max-w-7xl mx-auto">
+              <Logo size="lg" light />
               <button
                 type="button"
                 className="w-11 h-11 rounded-full bg-cream/10 hover:bg-cream/20 flex items-center justify-center"
@@ -140,7 +136,7 @@ export default function Navbar() {
                   className="w-full"
                 >
                   <Icon name="whatsapp" className="w-5 h-5" />
-                  Pedí presupuesto
+                  Contáctanos
                 </Button>
               </div>
             </motion.nav>

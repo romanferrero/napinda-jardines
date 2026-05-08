@@ -1,9 +1,6 @@
 /**
  * Set de íconos SVG inline. Toman currentColor para integrarse fácil.
  * Uso: <Icon name="leaf" className="w-6 h-6 text-forest-500" />
- *
- * Importante: el icono "whatsapp" usa fill (no stroke) — internamente
- * el componente desactiva stroke cuando detecta que el path es solid.
  */
 const paths = {
   leaf: (

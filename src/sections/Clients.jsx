@@ -1,12 +1,10 @@
-// src/sections/Clients.jsx
 import { clients } from '../data/clients'
 import Container from '../components/ui/Container'
 import SectionTitle from '../components/ui/SectionTitle'
 import FadeIn from '../components/ui/FadeIn'
 
 /**
- * Sección Clientes — grid de logos en escala de grises que toman color
- * al hacer hover. Si no hay clientes en data/clients.js, no se renderiza.
+ * Sección Clientes
  */
 export default function Clients() {
   if (!clients.length) return null

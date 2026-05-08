@@ -30,6 +30,6 @@ export const values = [
 
 export const stats = [
   { value: '15+', label: 'años de experiencia' },
-  { value: '300+', label: 'jardines en Uruguay' },
+  { value: '150+', label: 'jardines en Uruguay' },
   { value: '12', label: 'profesionales en el equipo' },
 ]

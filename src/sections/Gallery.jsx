@@ -7,9 +7,7 @@ import FadeIn from '../components/ui/FadeIn'
 import Icon from '../components/ui/Icon'
 
 /**
- * Galería estilo masonry.
- * Click en un proyecto abre un lightbox con TODAS sus fotos y descripción.
- * Navegación con flechas dentro del álbum (← →) y Esc para cerrar.
+ * Galería.
  */
 export default function Gallery() {
   const [activeProject, setActiveProject] = useState(null)

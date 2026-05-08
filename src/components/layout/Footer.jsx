@@ -4,18 +4,21 @@ import Logo from '../ui/Logo'
 import Icon from '../ui/Icon'
 
 /**
- * Footer en verde profundo con contacto, navegación y redes.
+ * Footer en verde profundo con marca prominente:
+ * - Logo en tamaño xl arriba
+ * - Watermark "ÑAPINDA" gigante decorativo en el fondo (clipping-bottom)
+ * - Bloques de contacto, navegación y redes
  */
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-forest-700 text-cream/80">
-      <Container className="py-16 md:py-20">
+    <footer className="relative bg-forest-700 text-cream/80 overflow-hidden">
+      <Container className="relative pt-16 md:pt-20 pb-40 md:pb-56">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <Logo light />
-            <p className="mt-5 max-w-sm text-cream/65 leading-relaxed">
+            <Logo size="xl" light />
+            <p className="mt-6 max-w-sm text-cream/65 leading-relaxed">
               {site.shortPitch}
             </p>
 
@@ -72,11 +75,29 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-cream/50">
+        <div className="mt-14 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-cream/50 relative z-10">
           <p>© {year} {site.fullName}. Todos los derechos reservados.</p>
           <p>Hecho con cariño en Uruguay.</p>
         </div>
       </Container>
+
+      {/* Watermark "ÑAPINDA" gigante decorativo, alineado al borde inferior.
+          Usa font-display con tracking apretado y opacidad muy baja para que
+          sea presencia de marca sin distraer. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center select-none"
+      >
+        <span
+          className="font-display font-medium leading-[0.8] tracking-tight text-leaf-300/[0.07] whitespace-nowrap"
+          style={{
+            fontSize: 'clamp(8rem, 28vw, 24rem)',
+            transform: 'translateY(18%)',
+          }}
+        >
+          Ñapinda
+        </span>
+      </div>
     </footer>
   )
 }

@@ -5,9 +5,6 @@ import Icon from '../components/ui/Icon'
 
 /**
  * Botón flotante de WhatsApp.
- * Aparece SOLO después de scrollear más allá del Hero (cuando el viewport
- * dejó atrás la primera pantalla). En el inicio compite visualmente con
- * los CTAs del hero, así que ahí se mantiene oculto.
  */
 export default function WhatsAppFAB() {
   const [show, setShow] = useState(false)

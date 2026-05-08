@@ -8,7 +8,7 @@ import Icon from '../components/ui/Icon'
 import Button from '../components/ui/Button'
 
 /**
- * Sección Contacto: información a la izquierda, formulario validado a la derecha.
+ * Sección Contacto
  */
 export default function Contact() {
   const {

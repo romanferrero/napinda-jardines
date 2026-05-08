@@ -1,5 +1,5 @@
 /**
- * Catálogo de servicios — agregar/editar items aquí.
+ * Catálogo de servicios.
  */
 export const services = [
   {

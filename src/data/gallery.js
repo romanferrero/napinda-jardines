@@ -5,13 +5,6 @@
  * `photos` con las fotos completas del álbum que se muestran al abrir el
  * lightbox. Reemplazá las URLs de Unsplash por fotos reales subidas a
  * /public/gallery/<slug>/01.jpg, 02.jpg, etc. cuando estén listas.
- *
- * Ejemplo con fotos propias:
- *   cover: '/gallery/patio-canelones/cover.jpg',
- *   photos: [
- *     '/gallery/patio-canelones/01.jpg',
- *     '/gallery/patio-canelones/02.jpg',
- *   ]
  */
 
 const u = (id, w = 1400) =>

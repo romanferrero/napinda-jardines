@@ -1,9 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-/**
- * Si la URL trae un hash (ej: /#nosotros), hace scroll suave al elemento.
- */
+
 export default function useScrollToHash() {
   const { hash, pathname } = useLocation()
 

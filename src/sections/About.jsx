@@ -8,11 +8,11 @@ const portrait =
   '/team/team.jpg'
 
 /**
- * Sección "Nosotros": dos columnas con imagen y texto, valores y stats.
+ * Sección "Nosotros"
  */
 export default function About() {
   return (
-    <section id="nosotros" className="py-24 md:py-32 bg-cream bg-grain">
+    <section id="equipo" className="py-24 md:py-32 bg-cream bg-grain">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
           <FadeIn className="lg:col-span-5 lg:sticky lg:top-32">
@@ -31,7 +31,7 @@ export default function About() {
 
           <div className="lg:col-span-7">
             <SectionTitle
-              eyebrow="Nosotros"
+              eyebrow="Equipo"
               title="Hacemos jardines con oficio, sensibilidad y tiempo."
               subtitle={site.longPitch}
             />

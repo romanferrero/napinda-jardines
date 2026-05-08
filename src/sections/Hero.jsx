@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion'
 import { site } from '../data/site'
 import Container from '../components/ui/Container'
+import Logo from '../components/ui/Logo'
 import Button from '../components/ui/Button'
 import Icon from '../components/ui/Icon'
 
 const heroImg =
-  'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=2000&q=80'
+  '/image3.jpg '
 
 /**
- * Hero a pantalla completa con foto, título serif grande y dos CTAs.
+ * Hero a pantalla completa con marca prominente, título serif grande y CTAs.
  */
 export default function Hero() {
   const ease = [0.22, 1, 0.36, 1]
@@ -31,10 +32,11 @@ export default function Hero() {
       </div>
 
       <Container className="relative pb-20 md:pb-28 pt-32 z-10">
+        {/* Logo grande arriba del título — refuerzo de marca */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.3 }}
+          transition={{ duration: 0.7, ease, delay: 0.4 }}
           className="text-leaf-200 text-xs md:text-sm font-medium tracking-[0.2em] uppercase mb-6"
         >
           Paisajismo · Uruguay
@@ -43,7 +45,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease, delay: 0.45 }}
+          transition={{ duration: 0.9, ease, delay: 0.55 }}
           className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.98] tracking-tight max-w-4xl text-cream"
         >
           Jardines que{' '}
@@ -55,17 +57,18 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.7 }}
+          transition={{ duration: 0.7, ease, delay: 0.8 }}
           className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-cream/85"
         >
           Diseñamos, construimos y mantenemos espacios verdes en todo el país.
-          Cada proyecto nace de una mirada sensible del lugar, pensado para crecer con el tiempo y acompañar a quienes lo habitan.
+          Cada proyecto nace de una mirada sensible del lugar, pensado para crecer con el tiempo y
+          acompañar a quienes lo habitan.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.9 }}
+          transition={{ duration: 0.7, ease, delay: 1.0 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <Button

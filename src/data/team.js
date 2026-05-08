@@ -1,7 +1,5 @@
 /**
  * Dueñas / referentes de la empresa.
- * Las fotos deben estar en /public/team/ — referencialas con paths
- * absolutos desde la raíz del sitio (ej: /team/victoria.jpg, no public/...).
  */
 export const team = [
   {

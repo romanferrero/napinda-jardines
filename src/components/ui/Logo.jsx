@@ -1,23 +1,30 @@
 /**
  * Logo "Ñapinda".
  *
- * Si subís un archivo a /public/logo.png (o /logo-light.png para fondo
- * oscuro), automáticamente se usa esa imagen. Mientras no exista, mostramos
- * el logo tipográfico (sin parpadeos ni imagen rota gracias a la
- * precarga con `new Image()`).
- *
- * Para subir el logo:
- *    napinda-jardines/public/logo.png        (variante para fondo cream)
- *    napinda-jardines/public/logo-light.png  (variante para fondo oscuro)
- *
- * Tamaño recomendado: 200-400px de ancho, formato PNG con fondo transparente.
+ * Props:
+ *   - size: 'sm' | 'md' | 'lg' | 'xl' | '2xl'   (default 'md')
+ *   - light: bool — usa la versión clara para fondo oscuro
+ *   - showSubtitle: bool — muestra "jardines" debajo (default true)
  */
 import { useEffect, useState } from 'react'
 
-export default function Logo({ className = '', light = false }) {
-  const src = light ? '/logo-light.png' : '/logo.png'
-  // 'unknown' (mientras prueba) | 'ok' (existe) | 'fail' (mostrar fallback)
+const SIZES = {
+  sm: { img: 'h-7 md:h-8', mark: 'w-6 h-6', name: 'text-base', sub: 'text-xs ml-1' },
+  md: { img: 'h-9 md:h-10', mark: 'w-7 h-7', name: 'text-xl', sub: 'text-sm ml-1.5' },
+  lg: { img: 'h-11 md:h-12', mark: 'w-9 h-9', name: 'text-2xl md:text-[1.75rem]', sub: 'text-sm md:text-base ml-2' },
+  xl: { img: 'h-14 md:h-16', mark: 'w-11 h-11 md:w-12 md:h-12', name: 'text-3xl md:text-4xl', sub: 'text-base md:text-lg ml-2' },
+  '2xl': { img: 'h-20 md:h-24', mark: 'w-14 h-14 md:w-16 md:h-16', name: 'text-4xl md:text-5xl', sub: 'text-lg md:text-xl ml-2' },
+}
+
+export default function Logo({
+  className = '',
+  light = false,
+  size = 'md',
+  showSubtitle = true,
+}) {
+  const src = light ? '/logo.png' : '/logo.png'
   const [status, setStatus] = useState('unknown')
+  const sz = SIZES[size] ?? SIZES.md
 
   useEffect(() => {
     let cancelled = false
@@ -31,21 +38,22 @@ export default function Logo({ className = '', light = false }) {
   if (status === 'ok') {
     return (
       <div className={`inline-flex items-center ${className}`}>
-        <img src={src} alt="Ñapinda Jardines" className="h-9 md:h-10 w-auto" />
+        <img src={src} alt="Ñapinda Jardines" className={`${sz.img} w-auto`} />
       </div>
     )
   }
 
-  // Fallback tipográfico (también se muestra mientras 'unknown')
+  // Fallback tipográfico
   const text = light ? 'text-cream' : 'text-forest-700'
   const accent = light ? 'text-leaf-300' : 'text-leaf-500'
+  const sub = light ? 'text-cream/60' : 'text-ink-mute'
 
   return (
     <div className={`inline-flex items-center gap-2.5 ${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        className={`w-7 h-7 ${accent}`}
+        className={`${sz.mark} ${accent}`}
         aria-hidden="true"
       >
         <path
@@ -53,11 +61,13 @@ export default function Logo({ className = '', light = false }) {
           fill="currentColor"
         />
       </svg>
-      <span className={`font-display text-xl tracking-tight leading-none ${text}`}>
+      <span className={`font-display tracking-tight leading-none ${sz.name} ${text}`}>
         Ñapinda
-        <span className={`align-baseline text-sm ml-1.5 font-light ${light ? 'text-cream/60' : 'text-ink-mute'}`}>
-          jardines
-        </span>
+        {showSubtitle && (
+          <span className={`align-baseline font-light ${sz.sub} ${sub}`}>
+            jardines
+          </span>
+        )}
       </span>
     </div>
   )

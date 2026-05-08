@@ -1,6 +1,5 @@
 /**
  * Información general del sitio.
- * Modificá este archivo para actualizar copy, contacto y redes
  */
 
 export const site = {
@@ -24,7 +23,6 @@ export const site = {
     email: 'info@napinda.com.uy',
     emailHref: 'mailto:info@napinda.com.uy',
     address: 'Montevideo, Uruguay',
-    hours: 'Lunes a viernes',
   },
 
   social: {
@@ -34,7 +32,7 @@ export const site = {
 
   nav: [
     { label: 'Inicio', href: '/' },
-    { label: 'Nosotros', href: '/#nosotros' },
+    { label: 'Nosotras', href: '/#nosotras' },
     { label: 'Equipo', href: '/#equipo' },
     { label: 'Servicios', href: '/#servicios' },
     { label: 'Galería', href: '/#galeria' },
