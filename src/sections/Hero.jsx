@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { site } from '../data/site'
 import Container from '../components/ui/Container'
-import Logo from '../components/ui/Logo'
 import Button from '../components/ui/Button'
 import Icon from '../components/ui/Icon'
 
@@ -31,13 +30,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-forest-900/30 via-forest-900/40 to-forest-900/85" />
       </div>
 
-      <Container className="relative pb-20 md:pb-28 pt-32 z-10">
-        {/* Logo grande arriba del título — refuerzo de marca */}
+      <Container className="relative pb-12 pt-28 sm:pb-20 md:pb-28 md:pt-32 z-10">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease, delay: 0.4 }}
-          className="text-leaf-200 text-xs md:text-sm font-medium tracking-[0.2em] uppercase mb-6"
+          className="text-leaf-200 text-xs md:text-sm font-medium tracking-[0.2em] uppercase mb-5 sm:mb-6"
         >
           Paisajismo · Uruguay
         </motion.p>
@@ -46,7 +44,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease, delay: 0.55 }}
-          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.98] tracking-tight max-w-4xl text-cream"
+          className="font-display text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02] sm:leading-[0.98] tracking-tight max-w-4xl text-cream"
         >
           Jardines que{' '}
           <span className="italic font-light text-leaf-200">
@@ -58,7 +56,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease, delay: 0.8 }}
-          className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-cream/85"
+          className="mt-6 sm:mt-8 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-cream/85"
         >
           Diseñamos, construimos y mantenemos espacios verdes en todo el país.
           Cada proyecto nace de una mirada sensible del lugar, pensado para crecer con el tiempo y
@@ -69,7 +67,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease, delay: 1.0 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4"
         >
           <Button
             href={site.contact.whatsappHref}
@@ -77,11 +75,12 @@ export default function Hero() {
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
+            className="w-full sm:w-auto"
           >
             <Icon name="whatsapp" className="w-5 h-5" />
             Contáctanos
           </Button>
-          <Button href="#servicios" variant="secondary" size="lg">
+          <Button href="#servicios" variant="secondary" size="lg" className="w-full sm:w-auto">
             Ver servicios
             <Icon name="arrowRight" className="w-4 h-4" />
           </Button>

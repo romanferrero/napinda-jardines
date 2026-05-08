@@ -43,7 +43,7 @@ export default function Gallery() {
   }, [activeProject, close, next, prev])
 
   return (
-    <section id="galeria" className="py-24 md:py-32 bg-cream">
+    <section id="galeria" className="py-20 md:py-32 bg-cream">
       <Container>
         <SectionTitle
           eyebrow="Galería"
@@ -53,8 +53,8 @@ export default function Gallery() {
           className="mx-auto"
         />
 
-        <FadeIn className="mt-14">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [&>*]:mb-5">
+        <FadeIn className="mt-10 md:mt-14">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-5 [&>*]:mb-4 sm:[&>*]:mb-5">
             {gallery.map((item, idx) => (
               <button
                 key={item.id}
@@ -72,12 +72,14 @@ export default function Gallery() {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 inset-x-0 p-5 text-left text-cream translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-xs uppercase tracking-[0.18em] text-leaf-200 mb-1">
+                {/* Mobile: gradient siempre visible para legibilidad. Desktop: solo en hover. */}
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/20 to-transparent sm:from-forest-900/80 sm:via-forest-900/0 sm:opacity-0 sm:group-hover:opacity-100 sm:transition-opacity sm:duration-300" />
+                {/* Mobile: título siempre visible. Desktop: aparece en hover. */}
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left text-cream sm:translate-y-3 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 sm:transition-all sm:duration-300">
+                  <p className="text-[0.65rem] sm:text-xs uppercase tracking-[0.18em] text-leaf-200 mb-1">
                     {item.category}
                   </p>
-                  <p className="font-display text-xl text-cream">{item.title}</p>
+                  <p className="font-display text-lg sm:text-xl text-cream">{item.title}</p>
                 </div>
                 <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-forest-900/65 backdrop-blur-sm text-cream text-xs font-medium opacity-90">
                   {item.photos.length} fotos
@@ -148,7 +150,7 @@ export default function Gallery() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.25 }}
-                    className="w-full max-h-[72vh] object-contain rounded-xl"
+                    className="w-full max-h-[60vh] sm:max-h-[72vh] object-contain rounded-xl"
                   />
                 </AnimatePresence>
 
@@ -168,13 +170,13 @@ export default function Gallery() {
               </div>
 
               <div className="lg:col-span-4 text-cream">
-                <p className="text-leaf-300 text-xs uppercase tracking-[0.2em] mb-3">
+                <p className="text-leaf-300 text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3">
                   {project.category}
                 </p>
-                <h3 className="font-display text-3xl md:text-4xl leading-tight text-cream">
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-cream">
                   {project.title}
                 </h3>
-                <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-cream/60">
+                <div className="mt-3 sm:mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-cream/60">
                   {project.location && (
                     <span className="flex items-center gap-1.5">
                       <Icon name="mapPin" className="w-4 h-4" />
@@ -184,11 +186,11 @@ export default function Gallery() {
                   {project.year && <span>· {project.year}</span>}
                 </div>
                 {project.description && (
-                  <p className="mt-5 text-cream/80 leading-relaxed text-sm md:text-base">
+                  <p className="mt-4 sm:mt-5 text-cream/80 leading-relaxed text-sm md:text-base">
                     {project.description}
                   </p>
                 )}
-                <p className="mt-6 text-xs text-cream/40">
+                <p className="mt-4 sm:mt-6 text-xs text-cream/40">
                   Foto {activePhoto + 1} de {photos.length} · ← → para navegar
                 </p>
               </div>

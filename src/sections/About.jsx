@@ -12,18 +12,18 @@ const portrait =
  */
 export default function About() {
   return (
-    <section id="equipo" className="py-24 md:py-32 bg-cream bg-grain">
+    <section id="equipo" className="py-20 md:py-32 bg-cream bg-grain">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
           <FadeIn className="lg:col-span-5 lg:sticky lg:top-32">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-[var(--shadow-lift)]">
+            <div className="aspect-[4/3] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-[var(--shadow-lift)]">
               <img
                 src={portrait}
                 alt="El equipo de Ñapinda en obra"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="mt-6 flex items-center gap-3 text-ink-mute">
+            <div className="mt-5 sm:mt-6 flex items-center gap-3 text-ink-mute">
               <span className="block w-10 h-px bg-leaf-500" />
               <p className="text-sm">Equipo Ñapinda · {site.contact.address}</p>
             </div>
@@ -36,7 +36,7 @@ export default function About() {
               subtitle={site.longPitch}
             />
 
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+            <div className="mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 sm:gap-y-10">
               {values.map((value, idx) => (
                 <FadeIn key={value.id} delay={idx * 0.08}>
                   <div className="flex items-center gap-3 mb-3">
@@ -55,14 +55,14 @@ export default function About() {
           </div>
         </div>
 
-        <FadeIn className="mt-24 md:mt-32">
-          <div className="rounded-3xl bg-forest-700 text-cream py-12 md:py-14 px-8 md:px-14 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6">
+        <FadeIn className="mt-20 md:mt-32">
+          <div className="rounded-3xl bg-forest-700 text-cream py-10 md:py-14 px-6 sm:px-8 md:px-14 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center sm:text-left">
-                <p className="font-display text-5xl md:text-6xl text-leaf-200 leading-none">
+                <p className="font-display text-4xl sm:text-5xl md:text-6xl text-leaf-200 leading-none">
                   {stat.value}
                 </p>
-                <p className="mt-3 text-cream/70 text-sm md:text-base">
+                <p className="mt-2 sm:mt-3 text-cream/70 text-sm md:text-base">
                   {stat.label}
                 </p>
               </div>
