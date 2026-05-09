@@ -88,7 +88,7 @@ export default function Hero() {
       </Container>
 
       <motion.a
-        href="#nosotros"
+        href="#nosotras"
         aria-label="Bajar"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
