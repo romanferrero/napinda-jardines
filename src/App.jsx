@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router-dom'
 import SiteLayout from './layouts/SiteLayout'
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
+import AdminPage from './admin/AdminPage'
+import { GalleryProvider } from './context/GalleryContext'
 import useScrollToHash from './hooks/useScrollToHash'
 
 /**
@@ -13,12 +15,15 @@ function App() {
   useScrollToHash()
 
   return (
-    <Routes>
-      <Route element={<SiteLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+    <GalleryProvider>
+      <Routes>
+        <Route element={<SiteLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+        <Route path="/admin" element={<AdminPage />} />
+      </Routes>
+    </GalleryProvider>
   )
 }
 

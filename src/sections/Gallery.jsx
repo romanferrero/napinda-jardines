@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { gallery } from '../data/gallery'
+import { useGallery } from '../context/GalleryContext'
 import Container from '../components/ui/Container'
 import SectionTitle from '../components/ui/SectionTitle'
 import FadeIn from '../components/ui/FadeIn'
@@ -10,6 +10,7 @@ import Icon from '../components/ui/Icon'
  * Galería.
  */
 export default function Gallery() {
+  const { projects: gallery } = useGallery()
   const [activeProject, setActiveProject] = useState(null)
   const [activePhoto, setActivePhoto] = useState(0)
 
