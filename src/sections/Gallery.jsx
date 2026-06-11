@@ -55,6 +55,11 @@ export default function Gallery() {
         />
 
         <FadeIn className="mt-10 md:mt-14">
+          {gallery.length === 0 ? (
+            <div className="py-16 text-center text-ink-mute">
+              Pronto vas a poder ver acá algunos de nuestros proyectos.
+            </div>
+          ) : (
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-5 [&>*]:mb-4 sm:[&>*]:mb-5">
             {gallery.map((item, idx) => (
               <button
@@ -88,6 +93,7 @@ export default function Gallery() {
               </button>
             ))}
           </div>
+          )}
         </FadeIn>
       </Container>
 

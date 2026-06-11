@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { signOut } from 'firebase/auth'
 import { auth } from '../firebase'
 import { useGallery } from '../context/GalleryContext'
@@ -7,7 +8,9 @@ import ProjectEditor from './ProjectEditor'
 export default function AdminDashboard() {
   const { projects, loading, removeProject } = useGallery()
   const [editing, setEditing] = useState(null) // null = list, 'new' = nuevo, project = editar
-  const [deleting, setDeleting] = useState(null)
+  const [confirmTarget, setConfirmTarget] = useState(null) // proyecto a eliminar
+  const [deleting, setDeleting] = useState(false)
+  const [deleteError, setDeleteError] = useState('')
 
   if (loading) {
     return (
@@ -27,15 +30,24 @@ export default function AdminDashboard() {
     )
   }
 
-  async function handleDelete(project) {
-    setDeleting(project.id)
+  async function handleConfirmDelete() {
+    if (!confirmTarget) return
+    setDeleting(true)
+    setDeleteError('')
     try {
-      await removeProject(project)
+      await removeProject(confirmTarget)
+      setConfirmTarget(null)
     } catch {
-      alert('Error al eliminar el proyecto')
+      setDeleteError('No se pudo eliminar el proyecto. Intentá de nuevo.')
     } finally {
-      setDeleting(null)
+      setDeleting(false)
     }
+  }
+
+  function closeConfirm() {
+    if (deleting) return
+    setConfirmTarget(null)
+    setDeleteError('')
   }
 
   return (
@@ -86,7 +98,7 @@ export default function AdminDashboard() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {projects.map((project) => (
               <div
-                key={project.id || project._docId}
+                key={project._docId || project.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 {/* Cover image */}
@@ -129,18 +141,12 @@ export default function AdminDashboard() {
                     </button>
                     <button
                       onClick={() => {
-                        if (
-                          window.confirm(
-                            `¿Segura que querés eliminar "${project.title}"?`
-                          )
-                        ) {
-                          handleDelete(project)
-                        }
+                        setDeleteError('')
+                        setConfirmTarget(project)
                       }}
-                      disabled={deleting === project.id}
-                      className="py-2 px-3 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-sm transition-colors disabled:opacity-50"
+                      className="py-2 px-3 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-sm transition-colors"
                     >
-                      {deleting === project.id ? '...' : 'Eliminar'}
+                      Eliminar
                     </button>
                   </div>
                 </div>
@@ -149,6 +155,71 @@ export default function AdminDashboard() {
           </div>
         )}
       </main>
+
+      {/* Modal de confirmación de borrado */}
+      <AnimatePresence>
+        {confirmTarget && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 bg-forest-900/50 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={closeConfirm}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full max-w-sm bg-white rounded-2xl shadow-xl p-6"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-11 h-11 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-xl">
+                  🗑️
+                </div>
+                <div className="min-w-0">
+                  <h2 className="font-display text-lg text-forest-800">
+                    Eliminar proyecto
+                  </h2>
+                  <p className="text-sm text-ink-mute mt-1">
+                    ¿Seguro que querés eliminar{' '}
+                    <span className="font-semibold text-ink">
+                      “{confirmTarget.title}”
+                    </span>
+                    ? También se borrarán sus fotos. Esta acción no se puede
+                    deshacer.
+                  </p>
+                </div>
+              </div>
+
+              {deleteError && (
+                <div className="mt-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm">
+                  {deleteError}
+                </div>
+              )}
+
+              <div className="mt-6 flex gap-3">
+                <button
+                  onClick={closeConfirm}
+                  disabled={deleting}
+                  className="flex-1 py-2.5 rounded-xl border border-leaf-200 text-ink-soft hover:bg-leaf-50 font-medium text-sm transition-colors disabled:opacity-50"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={handleConfirmDelete}
+                  disabled={deleting}
+                  className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm transition-colors disabled:opacity-50"
+                >
+                  {deleting ? 'Eliminando...' : 'Sí, eliminar'}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
